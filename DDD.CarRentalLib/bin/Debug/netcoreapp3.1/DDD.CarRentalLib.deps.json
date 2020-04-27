@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "DDD.CarRentalLib/1.0.0": {
+        "dependencies": {
+          "DDD.Base": "1.0.0"
+        },
+        "runtime": {
+          "DDD.CarRentalLib.dll": {}
+        }
+      },
+      "DDD.Base/1.0.0": {
+        "runtime": {
+          "DDD.Base.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DDD.CarRentalLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DDD.Base/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
