@@ -14,7 +14,7 @@ namespace DDD.Base.DomainModelLayer.Models
         public static readonly Money Zero = new Money(0);
 
         public string Currency { get; }
-        public decimal Amount { get; }
+        public decimal Amount { get;  }
 
         public Money(decimal amount, string currency)
         {
