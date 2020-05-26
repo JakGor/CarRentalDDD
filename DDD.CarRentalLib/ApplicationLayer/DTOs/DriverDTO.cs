@@ -12,5 +12,6 @@ namespace DDD.CarRentalLib.ApplicationLayer.DTOs
         public string LicenceNumber { get; set; }
 
         public double FreeMinutes { get; set; }
+        public decimal Balance { get; set; }
     }
 }

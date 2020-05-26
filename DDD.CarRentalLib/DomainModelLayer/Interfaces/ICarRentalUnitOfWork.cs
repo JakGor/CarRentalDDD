@@ -11,6 +11,7 @@ namespace DDD.CarRentalLib.DomainModelLayer.Interfaces
         IRepository<Driver> DriverRepository { get; }
         IRepository<Car> CarRepository { get; }
         IRepository<Rental> RentalRepository { get; }
+        IRepository<Passenger> PassengerRepository { get; }
         
     }
 }

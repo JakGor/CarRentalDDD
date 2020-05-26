@@ -14,5 +14,6 @@ namespace DDD.CarRentalLib.ApplicationLayer.DTOs
         public Guid DriverId { get; set; }
 
         public Guid CarId { get; set; }
+        public Guid PassengerId { get; set; }
     }
 }

@@ -22,7 +22,9 @@ namespace DDD.CarRentalLib.ApplicationLayer.Mappers
                 FirstName = driver.FirstName,
                 LastName = driver.LastName,
                 LicenceNumber = driver.LicenceNumber,
-                FreeMinutes = driver.FreeMinutes
+                FreeMinutes = driver.FreeMinutes,
+                Balance = driver.Balance.Amount
+                
             };
         }
     }

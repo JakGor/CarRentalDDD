@@ -24,7 +24,9 @@ namespace DDD.CarRentalLib.ApplicationLayer.Mappers
                 Total = rental.Total.Amount,
                 FreeMinutes = rental.FreeMinutes,
                 CarId = rental.CarId,
-                DriverId = rental.DriverId
+                DriverId = rental.DriverId,
+                PassengerId = rental.PassengerId
+                
             };
         }
     }

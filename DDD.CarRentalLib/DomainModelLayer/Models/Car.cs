@@ -42,8 +42,11 @@ namespace DDD.CarRentalLib.DomainModelLayer.Models
         }
         public void ChangePosition(Position newPosition)
         {
+            this.CurrentDistance += this.CurrentPosition.CalculateDistance(this.CurrentPosition, newPosition); 
+            this.TotalDistance += this.CurrentPosition.CalculateDistance(this.CurrentPosition, newPosition);
             this.CurrentPosition = newPosition;
         }
+
 
     }
 }

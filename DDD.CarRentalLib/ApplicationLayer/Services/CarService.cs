@@ -10,6 +10,7 @@ using DDD.CarRentalLib.DomainModelLayer.Models;
 using DDD.CarRentalLib.ApplicationLayer.Services;
 using DDD.CarRentalLib.ApplicationLayer.Mappers;
 using DDD.Base.DomainModelLayer.Events;
+using DDD.Base.DomainModelLayer.Models;
 
 namespace DDD.CarRentalLib.ApplicationLayer.Services
 {
@@ -39,7 +40,21 @@ namespace DDD.CarRentalLib.ApplicationLayer.Services
             this._unitOfWork.CarRepository.Insert(car);
             this._unitOfWork.Commit();
         }
+        public void ChangePositionOfCar(Guid carId, PositionDTO positionDTO)
+        {
+            Car car = this._unitOfWork.CarRepository.Get(carId)
+                ?? throw new Exception($"Could not find the car: '{carId}'");
+            if(car.Status == CarStatus.Rented)
+            {
+                Position newPosition = new Position(positionDTO.X, positionDTO.Y);
+                car.ChangePosition(newPosition);
+                this._unitOfWork.Commit();
+            }
+            else
+                throw new Exception("Car must be rented to change position");
+            
 
+        }
         public List<CarDTO> GetAllCars()
         {
             IList<Car> cars = this._unitOfWork.CarRepository.GetAll()

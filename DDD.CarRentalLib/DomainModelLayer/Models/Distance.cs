@@ -22,6 +22,7 @@ namespace DDD.CarRentalLib.DomainModelLayer.Models
             Value = value;
             Unit = DefaultUnit;
         }
+
         protected override IEnumerable<object> GetEqualityComponents()
         {
             yield return Math.Round(Value,1);
@@ -74,7 +75,7 @@ namespace DDD.CarRentalLib.DomainModelLayer.Models
         }
         private static bool IsZero(double testedValue)
         {
-            return decimal.Zero.CompareTo(testedValue) == 0;
+            return decimal.Zero.CompareTo((decimal)testedValue) == 0;
             
         }
 

@@ -17,6 +17,7 @@ namespace DDD.CarRentalLib.DomainModelLayer.Models
         public double FreeMinutes { get; protected set; }
         public Guid DriverId { get; protected set; }
         public Guid CarId {get; protected set;}
+        public Guid PassengerId { get; protected set; }
         private IFreeMinutesPolicy _policy; 
 
         public Rental(Guid rentalId, Guid carId, Guid driverId, DateTime started, IDomainEventPublisher eventPublisher)
@@ -49,7 +50,15 @@ namespace DDD.CarRentalLib.DomainModelLayer.Models
             {
                 FreeMinutes = this._policy.CalculateFreeMinutes(timeInMinutes);
             }
-
+        }
+        public void ReservePassenger(Guid passengerId)
+        {
+            this.PassengerId = passengerId;
+        }
+        public void PassengerAtTarget()
+        {
+            this.PassengerId = Guid.Empty;
+            
         }
     }
 }
